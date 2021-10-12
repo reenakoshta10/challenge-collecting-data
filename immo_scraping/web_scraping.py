@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import json
 import pandas as pd
+import re
 
 list_of_properties = []
 for i in range(1, 2):
@@ -22,13 +23,22 @@ for i in range(1, 2):
         property_details_page = BeautifulSoup(driver.page_source, "html.parser")
 
         try:
-            element = property_details_page.find("p", class_="classified__price")
-            price = element.find_all("span")[1].text
+            element_price = property_details_page.find("p", class_="classified__price")
+            price = element_price.find_all("span")[1].text
             property_details['price'] = price
         except ConnectionError:
             raise RuntimeError('Failed to open website')
 
+        try:
+            element_locality = property_details_page.find("span", class_="classified__information--address-row").text.replace("\n", "").strip()
+            locality = re.sub(" +", " ", element_locality)
+            property_details['Locality'] = locality
+        except ConnectionError:
+            raise RuntimeError('Failed to open website')
+
+
         list_of_properties.append(property_details)
     print(list_of_properties)
+
 
     driver.quit()
