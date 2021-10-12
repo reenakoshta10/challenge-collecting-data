@@ -25,6 +25,7 @@ for i in range(1, 3):
         price = property_details_page.find("p", class_="classified__price")
         property_details['price']= price
 
+        print(price)
         list_of_properties.append(property_details)
 
     driver.quit()
