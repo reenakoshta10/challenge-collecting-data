@@ -4,7 +4,7 @@ from selenium import webdriver
 import json
 import pandas as pd
 
-houses_url = []
+all_urls = []
 
 driver = webdriver.Chrome(executable_path="/Users/yusufakcakaya/Desktop/chromedriver")
 for i in range(1, 334):
@@ -18,13 +18,8 @@ for i in range(1, 334):
     listings = soup.find_all("a", class_="card__title-link")
 
     for pages in listings:
-        houses_url.append(pages["href"])
+        all_urls.append(pages["href"])
 
-print(houses_url)
-print((len(houses_url)))
 
-path_csv = "/Users/yusufakcakaya/PycharmProjects/change_collecting_data.house_apartments_urls.csv"
-with open(path_csv, 'w') as file:
-    for page_url in houses_url:
-        for url in page_url:
-            file.write(url + '\n')
+print((len(all_urls)))
+
