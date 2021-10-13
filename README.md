@@ -30,6 +30,13 @@ Our dataset holds the following columns:
 
 All these datasets are saved in ```property_data.csv``` file.
 
+While saving the datasets, we used python libraries ;
+ - python from bs4 import BeautifulSoup
+ - from selenium import webdriver
+ - import time
+ - import json
+ - import pandas as pd 
+ 
 
 ## Collaborators
 
@@ -46,27 +53,26 @@ Design and construction phase of the project was made by 4 collaborators.([Ujjwa
 ```
 challenge-collecting-data
 │
-│   README.md          :explains the project
-│   main.py            :Python script file necessary to initialize the project
-│   property_data.csv  :keeps all data for properties
+│   README.md           :explains the project
 │   
 │__   
-│   driver             :directory contains chromedriver
+│   driver              :directory contains chromedriver
 │   │
-│   │ chromedriver     :is a standalone server or a separate executable that is used by Selenium WebDriver to control Chrome.
+│   │ chromedriver      :is a standalone server or a separate executable that is used by Selenium WebDriver to control Chrome.
 │__ 
-│   immo_scraping      :directory contains web_scraping.py
+│   immo_scraping       :directory contains web_scraping.py
 │   │
-│   │ web_scraping.py  :Python script file for web scraping
+│   │ web_scraping.py   :Python script file for web scraping
+│   │ property_data.csv :keeps all data for properties
 │   
 
 ```
 
 ## Visuals
-.
-.
-.
-.
+
+- Out put of our dataset
+
+<img width="1214" alt="Screenshot 2021-10-13 at 15 54 27" src="https://user-images.githubusercontent.com/46165841/137147773-28ff3c2b-1858-4e07-8d08-73e18bafb550.png">
 
 
 ## Timeline
