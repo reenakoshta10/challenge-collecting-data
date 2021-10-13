@@ -4,25 +4,25 @@ import time
 import json
 import pandas as pd
 
-for i in range(1, 334):  # by the help of this loop we can reach all the pages
+# by the help of this loop we can reach all the pages
+for i in range(1, 334):
     page_num = str(i) + "&orderBy=relevance"
     url = (
         "https://www.immoweb.be/en/search/house/for-sale?countries=BE&page=" + page_num
     )
     list_of_properties = []
 
-    time.sleep(
-        2
-    )  # this sleep line can help us to give a break before reach each the pages
+    # this sleep line can help us to give a break before reach to each pages
+    time.sleep(2)
     driver = webdriver.Chrome(executable_path="driver/chromedriver")
 
     driver.get(url)
 
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
-    listings = soup.find_all(
-        "a", class_="card__title-link"
-    )  # listing help us to find all web pages
+    # listing help us to find all web pages
+    listings = soup.find_all("a", class_="card__title-link")
+
     for pages in listings:
 
         property_details = {}
