@@ -1,0 +1,86 @@
+window.dataLayer = [
+        {
+            "user": {
+                "loginStatus": "logged out",
+                "id": "",
+                "personal": {
+                    "language": ""
+                }
+            },
+                                        "classified": {
+                "id": "9524847",
+                "type": "house",
+                "subtype": "house",
+                "price": "299000",
+                "transactionType": "for sale",
+                "zip": "7504",
+                "visualisationOption": "xl",
+                "kitchen": {
+                    "type": "usa installed"
+                },
+                "building": {
+                    "constructionYear": "",
+                    "condition": ""
+                },
+                "energy": {
+                    "heatingType": "fueloil"
+                },
+                "certificates": {
+                    "primaryEnergyConsumptionLevel": "262"
+                },
+                "bedroom": {
+                    "count": "3"
+                },
+                "land": {
+                    "surface": "350"
+                },
+                "atticExists": "true",
+                "basementExists": "",
+                "outdoor": {
+                    "garden": {
+                        "surface": "50"
+                    },
+                    "terrace": {
+                        "exists": ""
+                    }
+                },
+                "specificities": {
+                    "SME": {
+                        "office": {
+                            "exists": "true"
+                        }
+                    }
+                },
+                "wellnessEquipment": {
+                    "hasSwimmingPool": ""
+                },
+                "parking": {
+                    "parkingSpaceCount": {
+                        "indoor": "2",
+                        "outdoor": "5"
+                    }
+                },
+                "condition": {
+                    "isNewlyBuilt": "false"
+                }
+            },
+                                    "customer": {
+                "id": "3834780",
+                "name": "",
+                "family" : "private",
+                "groupInfo": {
+                    "id": "",
+                    "name": ""
+                },
+                "networkInfo": {
+                    "id" : "",
+                    "name": ""
+                }
+            },
+                                    "screen": {
+                "name": "classified details",
+                "language": "en"
+            }
+
+        }
+    ];

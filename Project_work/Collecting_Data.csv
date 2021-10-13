@@ -1,0 +1,31 @@
+,Type_of_property,Subtype_of_propertyubtype_of_property,Price(in Euros),No_of_rooms,Kitchen,Surface_area,Terrace,Garden,Swimming_pool,State_of_building
+1,house,house,249000,4,1,851,Yes,Yes,No/Not specified,good
+2,house,house,185000,3,1,60,No,No/Varies,No/Not specified,just renovated
+3,house group,house group,422000 - 432000,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+4,house,house,365000,4,1,500,No,Yes,No/Not specified,to be done up
+5,house,house,595000,4,1,296,Yes,Yes,No/Not specified,to be done up
+6,house,house,225000,4,1,158,Yes,Yes,No/Not specified,good
+7,house group,house group,282500 - 327500,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+8,house,house,495000,5,1,522,Yes,Yes,No/Not specified,good
+9,house,house,545000,3,1,92,Yes,Yes,No/Not specified,as new
+10,house,house,30000,2,1,2010,Yes,No/Varies,No/Not specified,to be done up
+11,house,house,149000,2,1,49,No,No/Varies,No/Not specified,to be done up
+12,house,house,220000,2,1,606,Yes,No/Varies,No/Not specified,as new
+13,house,mixed use building,399000,2,1,60,No,No/Varies,No/Not specified,to be done up
+14,house,house,237500,3,1,170,Yes,Yes,No/Not specified,as new
+15,house,house,260000,2,1,325,Yes,Yes,No/Not specified,good
+16,house,house,419000,5,1,318,Yes,Yes,No/Not specified,to renovate
+17,house,villa,499000,4,1,2864,Yes,Yes,No/Not specified,good
+18,house group,house group,383850 - 383850,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+19,house group,house group,388850 - 388850,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+20,house group,house group,336000 - 447000,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+21,house group,house group,336000 - 447000,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+22,house,villa,695000,2,1,850,Yes,Yes,No/Not specified,good
+23,house,house,990000,6,1,251,Yes,No/Varies,No/Not specified,as new
+24,house,house,298000,2,1,164,Yes,No/Varies,No/Not specified,good
+25,house,house,298000,2,1,164,Yes,No/Varies,No/Not specified,good
+26,house,villa,795000,4,1,21451,Yes,No/Varies,No/Not specified,good
+27,house,house,209000,3,1,229,Yes,Yes,No/Not specified,good
+28,house,house,319000,4,1,473,Yes,Yes,No/Not specified,as new
+29,house group,house group,345000 - 395000,Varies,0,Varies,No,No/Varies,No/Not specified,as new
+30,house,house,365000,2,1,226,No,Yes,No/Not specified,as new
