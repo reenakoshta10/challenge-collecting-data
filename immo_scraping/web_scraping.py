@@ -47,17 +47,15 @@ for i in range(2, 3):
             if "window.classified" in str(script):
                 script_content= str(script)
                 facade_count =''
-                # if '"facadeCount":' in script_content:
-                #     facade_count = script_content.split('"facadeCount":')[1][:2].replace(",", "")
+                fireplace_exist = ''
+                isFurnished = ''
+                if '"facadeCount":' in script_content:
+                    facade_count = script_content.split('"facadeCount":')[1][:2].replace(",", "")
                 if '"fireplaceExists":' in script_content:
                     fireplace_exist = script_content.split('"fireplaceExists":')[1][:5].replace(",", "")
                 if '"isFurnished":' in script_content:
                     isFurnished = script_content.split('"isFurnished":')[1][:5].replace(",", "")
-
-                    
-                    
-                    # print(facade_count,fireplace_exist,isFurnished)
-            
+      
         element_area = property_details_page.find("p", class_="classified__information--property").text.strip().split()
         area = element_area[3] + "m2"
             #
@@ -71,7 +69,7 @@ for i in range(2, 3):
         property_details['transactionType'] = None if details_json[0]['classified']['transactionType']=="" else details_json[0]['classified']['bedroom']['count']
         property_details['no_of_rooms'] = None if details_json[0]['classified']['bedroom']['count']=="" else details_json[0]['classified']['bedroom']['count']
         property_details['area'] = None if area =="" else area
-        property_details['kitchen'] = None if details_json[0]['classified']['kitchen']['type']=="" else details_json[0]['classified']['kitchen']['type']
+        property_details['kitchen'] = 0 if details_json[0]['classified']['kitchen']['type']=="" else 1
         property_details['isFurnished'] = 1 if isFurnished == "true" else 0
         property_details['fireplace_exist'] = 1 if fireplace_exist=="true" else 0
         property_details['garden'] = 1 if len(details_json[0]['classified']['outdoor']['garden']['surface']) != 0 else 0
