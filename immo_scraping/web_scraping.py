@@ -66,15 +66,15 @@ for i in range(2, 3):
         property_details['type_of_property'] = None if details_json[0]['classified']['type']=="" else details_json[0]['classified']['type']
         property_details['subtype_of_property'] = None if details_json[0]['classified']['subtype']=="" else details_json[0]['classified']['subtype']
         property_details['price']= None if details_json[0]['classified']['price']=="" else details_json[0]['classified']['price']
-        property_details['transactionType'] = None if details_json[0]['classified']['transactionType']=="" else details_json[0]['classified']['bedroom']['count']
+        property_details['transactionType'] = None if details_json[0]['classified']['transactionType']=="" else details_json[0]['classified']['transactionType']
         property_details['no_of_rooms'] = None if details_json[0]['classified']['bedroom']['count']=="" else details_json[0]['classified']['bedroom']['count']
-        property_details['area'] = None if area =="" else area
         property_details['kitchen'] = 0 if details_json[0]['classified']['kitchen']['type']=="" else 1
         property_details['isFurnished'] = 1 if isFurnished == "true" else 0
         property_details['fireplace_exist'] = 1 if fireplace_exist=="true" else 0
         property_details['garden'] = 1 if len(details_json[0]['classified']['outdoor']['garden']['surface']) != 0 else 0
         property_details['terrace'] = 1 if details_json[0]['classified']['outdoor']['terrace']['exists']=="true" else 0
-        property_details['surface_area'] = None if details_json[0]['classified']['land']['surface'] == "" else details_json[0]['classified']['land']['surface']
+        property_details['surface_area'] = None if details_json[0]['classified']['land']['surface'] == "" else details_json[0]['classified']['land']['surface']+ "m2"
+        property_details['area'] = None if area =="" else area
         property_details['facade_count'] = None if facade_count == '' else facade_count
         property_details['swimming_pool'] = 0 if details_json[0]['classified']['wellnessEquipment']['hasSwimmingPool']=="" else 1
         property_details['state_of_building'] = None if details_json[0]['classified']['building']['condition']=="" else details_json[0]['classified']['building']['condition']
@@ -96,7 +96,7 @@ for i in range(2, 3):
 
         # Saving dictionary list dataframes to CSV file
 
-    df.to_csv('IMMOWEB_property_data.csv', mode='a', header=None,index=False)
+    df.to_csv('property_data.csv', mode='a', header=None,index=False)
     # thread = ThreadFunction(i, url)
     # thread.start()
     
