@@ -17,9 +17,9 @@ from threading import Thread
         # print(f"Thread {self.name}: finishing")
 
 
-for i in range(2, 3):
+for i in range(83, 84):
     page_num = str(i) + "&orderBy=relevance"
-    url = "https://www.immoweb.be/en/search/house/for-sale?countries=BE&page="
+    url = "https://www.immoweb.be/en/search/house/for-sale?countries=BE&page=" + page_num
     list_of_properties = []
 
         # print(f"Thread {self.name}: starting")
@@ -49,15 +49,19 @@ for i in range(2, 3):
                 facade_count =''
                 fireplace_exist = ''
                 isFurnished = ''
+                living_area = ''
                 if '"facadeCount":' in script_content:
                     facade_count = script_content.split('"facadeCount":')[1][:2].replace(",", "")
                 if '"fireplaceExists":' in script_content:
                     fireplace_exist = script_content.split('"fireplaceExists":')[1][:5].replace(",", "")
                 if '"isFurnished":' in script_content:
                     isFurnished = script_content.split('"isFurnished":')[1][:5].replace(",", "")
+                if '"netHabitableSurface"' in script_content:
+                    # str1= (script_content.split('"netHabitableSurface":')[1]).split(',')[0]
+                    living_area = (script_content.split('"netHabitableSurface":')[1]).split(',')[0]
       
-        element_area = property_details_page.find("p", class_="classified__information--property").text.strip().split()
-        area = element_area[3] + "m2"
+        # element_area = property_details_page.find("p", class_="classified__information--property").text.strip().split()
+        # area = element_area[3] + "m2"
             #
         element_locality = property_details_page.find("span",class_="classified__information--address-row")\
             .text.replace("\n", "").strip().replace("           ", "  ")
@@ -74,13 +78,15 @@ for i in range(2, 3):
         property_details['garden'] = 1 if len(details_json[0]['classified']['outdoor']['garden']['surface']) != 0 else 0
         property_details['terrace'] = 1 if details_json[0]['classified']['outdoor']['terrace']['exists']=="true" else 0
         property_details['surface_area'] = None if details_json[0]['classified']['land']['surface'] == "" else details_json[0]['classified']['land']['surface']+ "m2"
-        property_details['area'] = None if area =="" else area
+        property_details['area'] = None if living_area =="" else living_area+"m2"
         property_details['facade_count'] = None if facade_count == '' else facade_count
         property_details['swimming_pool'] = 0 if details_json[0]['classified']['wellnessEquipment']['hasSwimmingPool']=="" else 1
         property_details['state_of_building'] = None if details_json[0]['classified']['building']['condition']=="" else details_json[0]['classified']['building']['condition']
 
         list_of_properties.append(property_details)
+        
     driver.quit()
+    print("pageno.= ",i)
             # Creating Dataframes from the list of Dictionaries
 
     data = list_of_properties
