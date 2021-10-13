@@ -3,18 +3,19 @@ from selenium import webdriver
 import time
 import json
 import pandas as pd
-from threading import Thread
 
-for i in range(1, 334):  # by the help of this loop we can reach all the pages
+# by the help of this loop we can reach all the pages
+for i in range(1, 334):
     page_num = str(i) + "&orderBy=relevance"
     url = (
         "https://www.immoweb.be/en/search/house/for-sale?countries=BE&page=" + page_num
     )
     list_of_properties = []
 
+    # this sleep line can help us to give a break before reach each the pages
     time.sleep(
         30
-    )  # this sleep line can help us to give a break before reach each the pages
+    )  
 
     # Added chrome driver for web scraping using selenium
     driver = webdriver.Chrome(executable_path="driver/chromedriver")
@@ -25,11 +26,11 @@ for i in range(1, 334):  # by the help of this loop we can reach all the pages
     # converted the response into beautifulsoup
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
+    # listing help us to find all web pages
+    listings = soup.find_all("a", class_="card__title-link")
 
-    listings = soup.find_all(
-        "a", class_="card__title-link"
-    )  # listing help us to find all web pages
-    for pages in listings:  # for each property we are getting the url and get the response from the url
+    # for each property we are getting the url and get the response from the url
+    for pages in listings:  
 
         property_details = {}
         driver.get(pages["href"]) # get the response from the url
@@ -146,7 +147,9 @@ for i in range(1, 334):  # by the help of this loop we can reach all the pages
             if details_json[0]["classified"]["land"]["surface"] == ""
             else details_json[0]["classified"]["land"]["surface"] + "m2"
         )
-        property_details["Living_area"] = None if living_area == "" else living_area + "m2"
+        property_details["Living_area"] = (
+            None if living_area == "" else living_area + "m2"
+        )
         property_details["Facade_count"] = None if facade_count == "" else facade_count
         property_details["Swimming_pool"] = (
             0
@@ -163,7 +166,7 @@ for i in range(1, 334):  # by the help of this loop we can reach all the pages
         # we are going to append the specific details of a property into the lists of properties
 
         list_of_properties.append(property_details)
-        
+
     driver.quit()
     print("page no= ", i)
 
