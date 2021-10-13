@@ -54,6 +54,7 @@ Design and construction phase of the project was made by 4 collaborators.([Ujjwa
 challenge-collecting-data
 │
 │   README.md           :explains the project
+│   property_data.csv   :keeps all data for properties
 │   
 │__   
 │   driver              :directory contains chromedriver
@@ -63,7 +64,7 @@ challenge-collecting-data
 │   immo_scraping       :directory contains web_scraping.py
 │   │
 │   │ web_scraping.py   :Python script file for web scraping
-│   │ property_data.csv :keeps all data for properties
+│   
 │   
 
 ```
